@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Welcome to the Netflix Clone project, created as part of a group effort to replicate the functionality and design of the popular Netflix streaming service. This project uses Next.js, ui.shadcn, HTML, CSS, and TypeScript to simulate the Netflix interface and features. It’s a simple, yet effective way to understand how web development technologies work together to create dynamic websites.
 
-## Getting Started
+The website replicates the look and feel of Netflix, with features such as a movie carousel, display of trending content, and a clean, responsive design. This project is a great learning tool for front-end developers and anyone interested in building web applications.
 
-First, run the development server:
+Project Details
+	•	Group Name: 23 B-guruh
+	•	Project Description: Build a Netflix clone using Next.js, ui.shadcn, HTML, CSS, and TypeScript.
+	•	Technologies Used:
+	•	Next.js
+	•	ui.shadcn
+	•	HTML
+	•	CSS
+	•	TypeScript
+	•	Link to Project: Netflix Clone - Live Demo
 
-```bash
+Contributors
+	•	Zokirjonov Olimjon (2316126)
+	•	Qarshiboyev Axmadbek (2312872)
+	•	Khasanov Jamoliddin (2312280)
+	•	Isomiddin Yoqubjonov (2313136)
+	•	Behruz Abdumominov (2310652)
+
+Installation
+
+To run the Netflix clone locally, follow the steps below:
+	1.	Clone the repository:
+
+git clone https://github.com/your-username/netflix-clone.git
+
+
+	2.	Navigate into the project folder:
+
+cd netflix-clone
+
+
+	3.	Install dependencies:
+
+npm install
+
+
+	4.	Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+	5.	Open your browser and visit http://localhost:3000 to see the project in action.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Features
+	•	Responsive Design: The site adjusts well across different devices, ensuring a smooth experience on both desktop and mobile.
+	•	Dynamic Content: Using Next.js and TypeScript, the project dynamically loads content, giving the user a realistic streaming service experience.
+	•	Interactive UI: The homepage includes clickable movie titles, carousels, and a user-friendly navigation bar, all styled using ui.shadcn for a modern and clean look.
 
-## Learn More
+Future Enhancements
+	•	Integrating a backend for authentication and user profiles.
+	•	Adding video streaming functionality.
+	•	Enhancing the UI with animations.
 
-To learn more about Next.js, take a look at the following resources:
+License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open-source and available under the MIT License.
