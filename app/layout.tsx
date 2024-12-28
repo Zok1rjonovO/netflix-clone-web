@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Provider } from "@/provider/app";
+import { Provider } from "@/provider";
 import GlobalContext from "@/context";
 import { ReactNode } from "react";
 
