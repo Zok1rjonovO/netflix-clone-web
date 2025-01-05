@@ -25,7 +25,7 @@ Installation
 To run the Netflix clone locally, follow the steps below:
 	1.	Clone the repository:
 
-git clone https://github.com/your-username/netflix-clone.git
+git clone https://github.com/Zok1rjonovO/netflix-clone-web.git
 
 
 	2.	Navigate into the project folder:
