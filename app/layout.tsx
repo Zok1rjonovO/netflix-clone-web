@@ -1,9 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Provider } from "@/provider";
-import GlobalContext from "@/context";
-import { ReactNode } from "react";
+import RootLayoutClient from "./RootLayoutClient";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,24 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Netflix clone",
-  description: "Netlfix clone built with Next.js",
+  description: "Netflix clone built with Next.js",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <GlobalContext>
-          {children}
-          </GlobalContext>
-        </Provider>
+        <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>
   );

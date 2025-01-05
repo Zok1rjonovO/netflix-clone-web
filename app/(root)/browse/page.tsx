@@ -8,7 +8,6 @@ import { useSession } from "next-auth/react";
 const Page = () => {
   const { account } = useGlobalContext();
   const { data: session } = useSession();
-  console.log(session);
   if (account === null) return <ManageAccaunt />;
   if (session === null) return <Login />;
   return (

@@ -9,4 +9,11 @@ const nextConfig: NextConfig = {
   },
 };
 
+module.exports = {
+  reactStrictMode: true,
+  experimental: {
+    appDir: true
+  }
+};
+
 export default nextConfig;
