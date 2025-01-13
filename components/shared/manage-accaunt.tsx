@@ -5,6 +5,8 @@ import { Button } from "../ui/button";
 import { Dialog, DialogContent } from "../ui/dialog";
 import CreateAccountForm from "../form/create-account-form";
 import LoginAccountForm from "../form/login-account-form";
+import { DialogTitle } from "@radix-ui/react-dialog";
+// import ClearSessionButton from "../ClearSessionButton";
 
 const ManageAccaunt = () => {
   const [isDelete, setIsDelete] = useState<boolean>(false);
@@ -71,8 +73,12 @@ const ManageAccaunt = () => {
         >
           Manage Profiles
         </Button>
+        {/* <ClearSessionButton /> */}
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTitle>
+            {/* <h1>idk what to write</h1> */}
+          </DialogTitle>
         <DialogContent>
           {state === "Login" && <LoginAccountForm />}
           {state === "create" && <CreateAccountForm />}

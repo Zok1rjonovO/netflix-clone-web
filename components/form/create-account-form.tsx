@@ -1,24 +1,18 @@
 "use strict";
 
 import { createAccountSchema } from "@/lib/validation";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../ui/form";
+import {Form,FormControl,FormDescription,FormField,FormItem,FormLabel,FormMessage,} from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import PinInput from "react-pin-input";
+import OtpInput from "react-otp-input";
 
 const CreateAccountForm = () => {
+  const [pin, setPin] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof createAccountSchema>>({
     resolver: zodResolver(createAccountSchema),
     defaultValues: {
@@ -26,7 +20,7 @@ const CreateAccountForm = () => {
       pin: "",
     },
   });
-  const {isSubmitting } = form.formState;
+  const { isSubmitting } = form.formState;
 
   async function onSubmit(values: z.infer<typeof createAccountSchema>) {
     console.log(values);
@@ -69,24 +63,29 @@ const CreateAccountForm = () => {
               <FormItem>
                 <FormLabel>PIN code</FormLabel>
                 <FormControl>
-                  <PinInput
-                    length={4}
-                    initialValue={field.value}
-                    secret
-                    disabled={isSubmitting}
-                    secretDelay={100}
-                    onChange={(value) => field.onChange(value)}
-                    type={"numeric"}
-                    inputMode={"numeric"}
-                    style={{display:"grid", gridTemplateColumns:"repeat(4,1fr)",gap:"10px"}}
-                    inputStyle={{
-                      borderColor:"RGBA(255,255,255,0.16",
-                      height:"56px",
-                      width:"100%",
-                      fontSize:"40px"
-                    }}
-                    inputFocusStyle={{  borderColor:"RGBA(255,255,255,0.80",}}
-                    autoSelect={true}
+                  <OtpInput
+                    value={pin}
+                    onChange={(value) => setPin(value)}
+                    numInputs={4}
+                    renderSeparator={
+                      <span style={{ margin: "0 10px" }}>-</span>
+                    }
+                    renderInput={(props) => (
+                      <input
+                        {...props}
+                        style={{
+                          width: "70px",
+                          height: "70px",
+                          fontSize: "40px",
+                          border: "1px solid white",
+                          textAlign: "center",
+                          margin: "10px",
+                          // boshqa style'lar
+                        }}
+                        disabled={isLoading}
+                      />
+                    )}
+                    // boshqa prop'lar
                   />
                 </FormControl>
                 <FormDescription>
@@ -97,7 +96,13 @@ const CreateAccountForm = () => {
             )}
           />
 
-          <Button className={"w-full bg-red-600 hover:bg-red-700 flex justify-center items-center h-[56px] !text-white"} disabled={isSubmitting} type={"submit"}> 
+          <Button
+            className={
+              "w-full bg-red-600 hover:bg-red-700 flex justify-center items-center h-[56px] !text-white"
+            }
+            disabled={isSubmitting}
+            type={"submit"}
+          >
             Create Account
           </Button>
         </form>
